@@ -95,7 +95,7 @@ SQLiteAccessorUnitTest.prototype.transaction = function () {
     transAccessor.insert({ title: '中' }, function () { console.log('中'); });
     transAccessor.rollback(function () { console.log("事务已经回滚") });
     //这里主要测试 rollback后面的数据库操作是否会归纳到事务里边（）
-    transAccessor.insert({ title: '其' }, function () { console.log('其'); });
+    transAccessor.insert({ title: '其' }, function () { console.log('其'); }); 
 }
 
 module.exports.Run = function () {
