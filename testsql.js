@@ -1,5 +1,5 @@
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('chain.sqlite3');   
+var db = new sqlite3.Database('chain.sqlite3');
 // 或者
 // var db = new sqlite3.Database('todo.db');  
 
