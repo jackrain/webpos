@@ -8,6 +8,7 @@ function SQLiteAccessorUnitTest() { }
 //测试 新增 accessor.insert(data,callback);
 SQLiteAccessorUnitTest.prototype.insert = function () {
     accessor.addListener('INSERT', function () {
+        
         console.log('事件：新增一条数据');
     });
     accessor.addListener('INIT', function () {
@@ -29,7 +30,7 @@ SQLiteAccessorUnitTest.prototype.update = function () {
     accessor.addListener('UPDATE', function () {
         console.log("事件：数据修改了");
     });
-    accessor.update({ title: '各位好' }, { where: ["title='你好！'"] }, function (err, info) {
+    accessor.update({ title: '各位好' }, { where: ["title='你好！0'"] }, function (err, info) {
         if (err) {
             console.log(err);
         } else {
@@ -89,17 +90,31 @@ SQLiteAccessorUnitTest.prototype.selectEach = function () {
 SQLiteAccessorUnitTest.prototype.transaction = function () {
     var transAccessor = new accessorlib.SQLiteAccessor('todo', true);
     //开启事务
-    transAccessor.beginTrans(function () { console.log("事务已经开启") });
-    transAccessor.insert({ title: '我' }, function () { console.log('我'); });
-    transAccessor.insert({ title: '是' }, function () { console.log('是'); });
-    transAccessor.insert({ title: '中' }, function () { console.log('中'); });
-    transAccessor.rollback(function () { console.log("事务已经回滚") });
+    transAccessor.beginTrans();
+    for (var i = 0, k = 10000; i < k; i++) {
+        transAccessor.update({ title: '我' }, { where: ["title='其'"] });
+    }
+    setTimeout(function () { transAccessor.commit(); },5000)
+   //transAccessor.commit();
     //这里主要测试 rollback后面的数据库操作是否会归纳到事务里边（）
-    transAccessor.insert({ title: '其' }, function () { console.log('其'); }); 
+   // transAccessor.insert({ title: '其' }, function () { console.log('其'); });
+}
+
+//事务测试2
+SQLiteAccessorUnitTest.prototype.transaction2 = function () {
+    var transAccessor = new accessorlib.SQLiteAccessor('todo', true);
+    
+    transAccessor.beginTrans();
+
+    for (var i = 0, k = 10000; i < k; i++) {
+        transAccessor.update({ title: '中' }, { where: ["title='其'"] });
+    }
+    
+    transAccessor.commit(function () { console.log('end'); });
 }
 
 module.exports.Run = function () {
-    var method = '';//
+    var method = 'insert';//
     //默认运行最后一个用例
     root.Application.RunModule(SQLiteAccessorUnitTest, method);
 }
