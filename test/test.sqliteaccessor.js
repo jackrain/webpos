@@ -5,6 +5,10 @@ var accessor = new accessorlib.SQLiteAccessor('todo');
 //SQLiteAccessor 单元测试
 function SQLiteAccessorUnitTest() { }
 
+//创建数据库连接方式:
+// accessor = new accessorlib.SQLiteAccessor('表名',是否手动事务);
+// accessor = new accessorlib.SQLiteAccessor('表名',自定义数据库连接地址);
+
 //测试 新增 accessor.insert(data,callback);
 SQLiteAccessorUnitTest.prototype.insert = function () {
     accessor.addListener('INSERT', function () {
@@ -95,7 +99,7 @@ SQLiteAccessorUnitTest.prototype.transaction = function () {
     transAccessor.insert({ title: '中' }, function () { console.log('中'); });
     transAccessor.rollback(function () { console.log("事务已经回滚") });
     //这里主要测试 rollback后面的数据库操作是否会归纳到事务里边（）
-    transAccessor.insert({ title: '其' }, function () { console.log('其'); }); 
+    transAccessor.insert({ title: '其' }, function () { console.log('其'); });
 }
 
 module.exports.Run = function () {

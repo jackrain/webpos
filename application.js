@@ -3,11 +3,13 @@ function RunApplication() {
 
 };
 //运行default目录下指定类型文件
-RunApplication.prototype.Run = function (dir, demo) {
+RunApplication.prototype.Run = function (dir, demo, method) {
     var path = "./" + dir + "/" + demo + ".js";
     var context = require(path);
     if (this.IsFunction(context.Run)) {
         context.Run();
+    } else if (this.IsFunction(context.Test)) {
+        this.RunModule(context.Test, method);
     }
 }
 //检测指定传入对象是否为函数
