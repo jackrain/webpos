@@ -9,3 +9,30 @@ exports.mappings = [
     { name: 'm_pdtalias_webpos', from: 'm_pdtalias_plug', fields: '*', pk: 'Id', mk: 'Id' },
     { name: 'm_product_webpos', from: 'm_product_plug', fields: '*', pk: 'Id', mk: 'Id' }
 ];
+
+//log4js日志配置
+exports.log4jsCfg = {
+    "appenders": [
+        {
+            "type": "file",
+            "filename": "app_data/log/debug/log_file.log",
+            "maxLogSize": 1,
+            "backups": 3,
+            "category": "debug"
+        },
+        {
+            "type": "file",
+            "filename": "app_data/log/error/log_file.log",
+            "maxLogSize": 20480,
+            "backups": 3,
+            "category": "error"
+        },
+        {
+            "type": "file",
+            "filename": "app_data/log/info/log_file.log",
+            "maxLogSize": 20480,
+            "backups": 3,
+            "category": "info"
+        }
+    ]
+}
