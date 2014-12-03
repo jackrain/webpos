@@ -5,7 +5,7 @@ var Log4JsLearnUnitTest = function () { }
 
 Log4JsLearnUnitTest.prototype.configure = function () {
     log4js.configure(framework.Configuration.log4jsCfg);
-    var logger = log4js.getLogger('');
+    var logger = log4js.getDefaultLogger();
     
     logger.trace('Entering cheese testing');
     logger.debug('Got cheese.');

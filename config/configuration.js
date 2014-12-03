@@ -17,24 +17,33 @@ exports.mappings = [
 exports.log4jsCfg = {
     "appenders": [
         {
-            "type": "file",
-            "filename": "app_data/log/debug/log_file.log",
-            "maxLogSize": 1,
+            "type": "dateFile",
+            "filename": "app_data/log/debug/",
+            "pattern": "yyyy-MM-dd.txt",
+            "maxLogSize": 20480,
             "backups": 3,
+            "absolute": false,
+            "alwaysIncludePattern": true,
             "category": "debug"
         },
         {
-            "type": "file",
-            "filename": "app_data/log/error/log_file.log",
+            "type": "dateFile",
+            "filename": "app_data/log/error/",
+            "pattern": "yyyy-MM-dd.txt",
             "maxLogSize": 20480,
             "backups": 3,
+            "absolute": false,
+            "alwaysIncludePattern": true,
             "category": "error"
         },
         {
-            "type": "file",
-            "filename": "app_data/log/info/log_file.log",
+            "type": "dateFile",
+            "filename": "app_data/log/info/",
+            "pattern": "yyyy-MM-dd.txt",
             "maxLogSize": 20480,
             "backups": 3,
+            "absolute": false,
+            "alwaysIncludePattern": true,
             "category": "info"
         }
     ]
