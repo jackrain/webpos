@@ -1,5 +1,5 @@
 //本地数据库连接地址
-exports.db_path = "chain.sqlite3";
+exports.connectionString = "dbbase/POSBase.db";
 
 //新增数据同步映射配置
 exports.mappings = [

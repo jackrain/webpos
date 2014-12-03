@@ -1,0 +1,17 @@
+{
+  "name": "framework",
+  "version": "0.1.0",
+  "description": "webpos 2.0 framework",
+  "main": "framework.js",
+  "dependencies": {
+    
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+  ],
+  "author": ""
+}
