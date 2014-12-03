@@ -1,9 +1,9 @@
-//±¾µØÊı¾İ¿âÁ¬½ÓµØÖ·
+ï»¿//æœ¬åœ°æ•°æ®åº“è¿æ¥åœ°å€
 exports.connectionString = "dbbase/POSBase.db";
 
-//ĞÂÔöÊı¾İÍ¬²½Ó³ÉäÅäÖÃ
+//æ–°å¢æ•°æ®åŒæ­¥æ˜ å°„é…ç½®
 exports.mappings = [
-    /*name:±¾µØ±íÃû³Æ from:¶ÔÓ¦µÄÔöÁ¿Êı¾İ±íÃû³Æ fields:×Ö¶Î pk:±¾µØ±íÖ÷¼ü mk:ÔöÁ¿±í¶ÔÓ¦±¾µØ±íÖ÷¼ü*/
+    /*name:æœ¬åœ°è¡¨åç§° from:å¯¹åº”çš„å¢é‡æ•°æ®è¡¨åç§° fields:å­—æ®µ pk:æœ¬åœ°è¡¨ä¸»é”® mk:å¢é‡è¡¨å¯¹åº”æœ¬åœ°è¡¨ä¸»é”®*/
     { name: 'c_pricearea', from: 'c_pricearea_plug', fields: '*', pk: 'Id', mk: 'Id' },
     { name: 'c_viptype_dis', from: 'c_viptype_dis_plug', fields: '*', pk: 'Id', mk: 'Id' },
     { name: 'm_pdtalias_webpos', from: 'm_pdtalias_plug', fields: '*', pk: 'Id', mk: 'Id' },

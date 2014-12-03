@@ -4,6 +4,7 @@
   "version": "0.1",
   "main": "index.html",
   "window": {
+	"debug":true,
     "show": true,
     "toolbar": true,
     "position": "center",

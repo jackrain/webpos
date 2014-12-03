@@ -5,9 +5,7 @@ function Run() {
     root.Application = new context.RunApplication();
     root.Application.Run("test", 'test.string');
 }
-
-
-module.exports = Run;
+module.exports.Run = Run;
 
 Run();
 
