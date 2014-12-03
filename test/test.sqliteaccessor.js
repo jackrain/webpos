@@ -93,14 +93,11 @@ SQLiteAccessorUnitTest.prototype.selectEach = function () {
 SQLiteAccessorUnitTest.prototype.transaction = function () {
     var transAccessor = new accessorlib.SQLiteAccessor('todo', true);
     //开启事务
-    transAccessor.transBegin(function () { console.log("事务已经开启") });
+    transAccessor.beginTrans(function () { console.log("事务已经开启") });
     transAccessor.insert({ title: '我' }, function () { console.log('我'); });
     transAccessor.insert({ title: '是' }, function () { console.log('是'); });
     transAccessor.insert({ title: '中' }, function () { console.log('中'); });
-    transAccessor.transEnd(function (err) {
-        console.log("事务始终回滚");
-        return false;
-    });
+    transAccessor.rollback(function () { console.log("事务已经回滚") });
     //这里主要测试 rollback后面的数据库操作是否会归纳到事务里边（）
     transAccessor.insert({ title: '其' }, function () { console.log('其'); });
 }

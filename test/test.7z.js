@@ -43,14 +43,9 @@ Zip7UnitTest.prototype.extractFull = function () {
     });
 }
 
-//解压db.7z
-Zip7UnitTest.prototype.extractdbupdate = function () {
-    var path = './dbupdate/posbase_v927_plug.7z';
-    var destination = './dbupdate';
-    ZipUtil.extractFull(path, destination).then(function () {
-        console.log('extract dbplug success');
-    });
+Zip7UnitTest.prototype.f = function () {
 }
+
 
 module.exports.Run = function () {
     var method = '';//

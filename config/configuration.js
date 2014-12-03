@@ -1,4 +1,7 @@
-﻿//本地数据库连接地址
+﻿exports.db_path = "chain.sqlite3";
+exports.server_url = "http://goto.syman.cn:8686/servlets/binserv/Rest";
+
+//本地数据库连接地址
 exports.connectionString = "dbbase/POSBase.db";
 
 //新增数据同步映射配置

@@ -7,6 +7,4 @@ function Run() {
 }
 module.exports.Run = Run;
 
-Run();
-
-setTimeout(function () { debugger; }, 60000);
+setTimeout(function () { debugger;},60000);
