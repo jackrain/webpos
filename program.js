@@ -3,7 +3,7 @@
 function Run() {
     root.baseDIR = __dirname;
     root.Application = new context.RunApplication();
-    root.Application.Run("test", 'test.log');
+    root.Application.Run("test", 'test.data.api');
 }
 module.exports.Run = Run;
 
