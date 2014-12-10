@@ -1,6 +1,4 @@
-﻿exports.db_path = "chain.sqlite3";
-exports.server_url = "http://goto.syman.cn:8686/servlets/binserv/Rest";
-
+﻿
 //本地数据库连接地址
 exports.connectionString = "dbbase/POSBase.db";
 
@@ -47,4 +45,8 @@ exports.log4jsCfg = {
             "category": "info"
         }
     ]
-}
+};
+
+exports.rest_url = "http://goto.syman.cn:8686/servlets/binserv/Rest";
+exports.username="nea@burgen.com.cn";
+exports.password="newbos2011";
