@@ -15,6 +15,11 @@ Log4JsLearnUnitTest.prototype.configure = function () {
     logger.fatal('Cheese was breeding ground for listeria.');
 }
 
+Log4JsLearnUnitTest.prototype.log = function () {
+    framework.Logger.Debug("调试信息....");
+    framework.Logger.Error("这里有问题哦....");
+    framework.Logger.Info("这是一个普通日志信息....");
+}
 module.exports.Run = function () {
     var method = '';//
     //默认运行最后一个用例
