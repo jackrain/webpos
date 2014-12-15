@@ -3,10 +3,10 @@
 function Run() {
     root.baseDIR = __dirname;
     root.Application = new context.RunApplication();
-    root.Application.Run("test", 'test.data.api');
+    root.Application.Run("test", 'test.rest');
 }
 module.exports.Run = Run;
 
 Run();
 
-setTimeout(function () { debugger;},60000);
+//setTimeout(function () { debugger;},60000);

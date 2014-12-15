@@ -57,7 +57,7 @@ BackBoneLearnUnitTest.prototype.collection2 = function () {
     collection.fetch({data: {page:1}});
     collection.add(ins);
     collection.create([{ age: 18 }], { a: '1' });
-    console.log(collection.length);
+    console.log(collection);
 }
 
 BackBoneLearnUnitTest.prototype.route = function () {
