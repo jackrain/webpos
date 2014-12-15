@@ -8,8 +8,7 @@ ModuleValidateUnitTest.prototype.vip = function () {
     vip.bind('invalid', function () {
         console.log(this.validationError.message);
     });
-    vip.setName('');
-    vip.setAge('aaa');
+    vip.setCARDNO('aa');
 }
 
 module.exports.Run = function () {

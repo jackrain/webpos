@@ -3,7 +3,7 @@
 function Run() {
     root.baseDIR = __dirname;
     root.Application = new context.RunApplication();
-    root.Application.Run("test", 'test.codegen');
+    root.Application.Run("test", 'test.module.validate');
 }
 module.exports.Run = Run;
 
