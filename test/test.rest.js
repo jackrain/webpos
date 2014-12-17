@@ -24,7 +24,7 @@ network.prototype.ExecuteSQL=function(){
     });
 };
 module.exports.Run = function () {
-    var method = 'downloaddata';
+    var method = 'ExecuteSQL';
     root.Application.RunModule(network, method);
 }
 
