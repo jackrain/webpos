@@ -1,0 +1,89 @@
+﻿.login {
+    width: 500px;
+    margin: 0px auto;
+}
+
+.logo {
+    float: left;
+    background-image: url(../images/logo.png);
+    height: 40px;
+    width: 140px;
+}
+
+.header {
+    margin-top: 165px;
+    height: 40px;
+}
+
+.form {
+    height: 260px;
+    width: 100%;
+    clear: both;
+    padding: 1px;
+    clear: both;
+    margin: 20px 0px 0px 0px;
+    background: url(../images/login-background.png) no-repeat;
+}
+
+.wrapper {
+    width: 290px;
+    margin-left: 105px;
+    height: 40px;
+    padding: 0px 0px 0px 15px;
+    background: url(../images/login-input.png) no-repeat;
+}
+
+.input {
+    border: none;
+    height: 40px;
+    width: 210px;
+    font-size: 22px;
+    color: white;
+    outline: none;
+    background-color: transparent;
+}
+
+.pos-label {
+    height: 100%;
+    font-size: 18px;
+    color: #fff1d5;
+    line-height: 40px;
+    font-family: 黑体;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.first {
+    margin-top: 49px;
+}
+
+.second {
+    margin-top: 20px;
+}
+
+.regist {
+    float: right;
+    background-image: url(../images/regist.png);
+    height: 100%;
+    width: 140px;
+}
+
+.inner {
+    margin-left: 105px;
+}
+
+.keyboard {
+    width: 50px;
+    height: 50px;
+    float: right;
+    cursor: pointer;
+    background: url(../images/openkeyboard2.png) no-repeat;
+}
+
+.login_button {
+    display: inline-block;
+    width: 290px;
+    height: 40px;
+    cursor: pointer;
+    background: url(../images/login.png) no-repeat;
+}

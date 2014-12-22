@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebPos 2.0</title>
+    <link type="text/css" rel="stylesheet" href="../content/css/bootstrap-table.min.css" />
+    <link type="text/css" rel="stylesheet" href="../content/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../content/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row top">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="logo"></i>
+                        <i class="tip-mail"></i>
+                    </div>
+                    <div class="col-md-6 font-header">
+                        <div class="header-right">
+                            <div class="header-label">
+                                <label>员工名称：</label>
+                                <label>aaa</label>
+                            </div>
+                            <i class="icon icon-change-work"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row search">
+                    <div class="col-md-8">
+                        <div class="input-wrapper search-first pos-inline-block">
+                            <input class="pos-input" type="text" value="" name="Name" id="Name" placeholder="商品搜索" />
+                            <i class="icon icon-pos-keyboard"></i>
+                        </div>
+                        <div class="input-wrapper search-second pos-inline-block">
+                            <input class="pos-input" type="text" value="" name="Cashier" id="Cashier" placeholder="无码收银" />
+                            <i class="icon icon-pos-keyboard"></i>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-lg" data-show="true" data-backdrop="static" data-toggle="modal" data-target="#myModal">
+                            Launch demo modal
+                        </button>
+                    </div>
+                    <div class="col-md-4 font-header">
+                        <div class="header-sub-right">
+                            <div class="header-label">
+                                <label>店铺名称：</label>
+                                <label>ABC</label>
+                            </div>
+                            <i class="icon icon-network-normal"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pos-body"></div>
+        </div>
+        <div class="row footer">
+            <div class="col-md-3">
+                <div class="input-wrapper">
+                    <input class="pos-input" type="text" value="" name="Name" id="Text1" placeholder="会员查询" />
+                    <i class="icon icon-pos-keyboard"></i>
+                </div>
+                <div class="memeber-search">
+                    <div class="member-item">
+                        <p class="member-label member-label-first">姓名</p>
+                        <p class="member-text">周碧文</p>
+                        <p class="no-margin member-bottom"><i class="icon icon-view"></i></p>
+                    </div>
+                    <div class="member-item">
+                        <p class="member-label member-label-first">金额</p>
+                        <p class="member-text">1000000.00</p>
+                        <p class="no-margin  member-bottom"><i class="icon icon-recharge"></i></p>
+                    </div>
+                    <div class="member-item">
+                        <p class="member-label member-label-first">积分</p>
+                        <p class="member-text">100000</p>
+                        <p class="no-margin  member-bottom"><i class="icon icon-redeem"></i></p>
+                    </div>
+                    <div class="member-item member-search-last">
+                        <i class="icon icon-add-member"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pos-menus">
+                <div class="pos-menus-row1">
+                    <div class="menu-item"><i class="icon icon-invoice"></i></div>
+                    <div class="menu-item"><i class="icon icon-product"></i></div>
+                    <div class="menu-item"><i class="icon icon-inventory"></i></div>
+                    <div class="menu-item"><i class="icon icon-refund"></i></div>
+                    <div class="menu-item"><i class="icon icon-compass"></i></div>
+                </div>
+                <div class="pos-menus-row2">
+                    <div class="menu-item"><i class="icon icon-help"></i></div>
+                    <div class="menu-item"><i class="icon icon-settings"></i></div>
+                    <div class="menu-item"><i class="icon icon-more"></i></div>
+                    <div class="menu-item"><i class="icon icon-"></i></div>
+                    <div class="menu-item"><i class="icon icon-"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cashier-summary">
+                    共计商品<label>10</label>件
+                </div>
+                <div class="cashier">
+                    <label class="cashier-title">收银</label>
+                    <div class="cashier-account">
+                        ￥<label class="cashier-account-label">20000.0</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">商品搜索</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid pos-search form" role="form">
+                        <div id="search_toolbar" class="pos-search-wrapper none-user-select">
+                            <div class="form-group has-feedback">
+                                <label class="control-label sr-only" for="inputSuccess5"></label>
+                                <input type="text" class="form-control input-lg" />
+                                <span class="glyphicon glyphicon-pos-search form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="pos-search-result">
+                            <table data-toggle="table" data-pagination="true" data-side-pagination="server" data-page-list="[5, 10, 20, 50, 100, 200]" data-url="../data1.json" data-cache="false" data-height="299">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id">商品条码</th>
+                                        <th data-field="name">名称</th>
+                                        <th data-field="price">原价</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer none-user-select">
+                    <div class="modal-footer-left user-select">找到0件匹配商品</div>
+                    <button type="button" class="btn btn-pos-cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-pos">加入订单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

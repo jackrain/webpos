@@ -2,9 +2,9 @@
   "name": "Frameless Window",
   "description": "Chrome platform app.",
   "version": "0.1",
-  "main": "index.html",
+  "main": "web/views/index.html",
   "window": {
-	"debug":true,
+    "debug":true,
     "show": true,
     "toolbar": true,
     "position": "center",

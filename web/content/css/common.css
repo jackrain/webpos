@@ -1,0 +1,225 @@
+﻿body, html {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-family: 黑体;
+}
+
+.bd-family {
+    font-family: 黑体;
+}
+
+.none-user-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.user-select {
+    user-select: initial;
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+}
+
+.clear {
+    clear: both;
+    height: 0px;
+    width: 0px;
+}
+
+.font-header {
+    font-size: 16px;
+    color: #fff2e8;
+    font-family: 黑体;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modal-content {
+    border: 1px solid #ef9149;
+}
+
+.modal-header {
+    background-color: #ef9149;
+}
+
+.btn-pos:hover {
+    color: #ffffff !important;
+    background-color: #DA670D;
+}
+
+.btn-pos:active {
+    background-image: none;
+    background-color: #DA670D;
+    border-color: #ffffff;
+}
+
+.btn-pos-cancel:hover {
+    color: #ffffff !important;
+    background-color: #84807E;
+}
+
+.btn-pos-cancel:active {
+    background-image: none;
+    background-color: #84807E;
+    border-color: #ffffff;
+}
+
+
+.btn-pos {
+    color: #ffffff;
+    font-size: 18px !important;
+    background-color: #FC9547;
+}
+
+.btn-pos-cancel {
+    color: #ffffff;
+    font-size: 18px !important;
+    background-color: #cfc5c0;
+}
+
+.btn {
+    outline: none !important;
+}
+
+.modal-title {
+    color: #ffffff;
+}
+
+.modal-footer-left {
+    float: left;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.table th {
+    background-color: #f0f0f0;
+}
+
+.pos-search {
+}
+
+.pos-search-wrapper {
+    height: 60px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 7px;
+}
+
+.pos-search-result {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.glyphicon-pos-search {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background: url(../images/search.png) no-repeat center;
+}
+
+.pos-keyboard {
+    background-color: #D8D8D8;
+    padding: 10px 10px 6px 10px;
+    border: 2px solid #ef9149;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    width: 1064px;
+    margin: 10px auto;
+    position: relative;
+    vertical-align: text-bottom;
+}
+
+.pos-keyboard-right {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.pos-enter {
+    display: block !important;
+    height: 186px !important;
+    padding: 40px 15px 10px 10px !important;
+}
+
+.block {
+    display: block;
+}
+
+.key {
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 0px;
+    cursor: pointer;
+    margin: 0px 6px 6px 0px;
+}
+
+.key-margin {
+    margin-right: 6px;
+}
+
+.lg {
+    width: 58px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+}
+
+.mlg {
+    width: 94px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+}
+
+.blg {
+    width: 120px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+}
+
+.md {
+    width: 40px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+}
+
+.pos-gray:active {
+    background-color: #7E7776;
+}
+
+.pos-gray {
+    background-color: #A9A3A0;
+}
+
+.pos-white:active {
+    background-color: #E3E3E3;
+}
+
+.pos-white {
+    color: #A9A3A0;
+    background-color: #FFFFFF;
+}
+
+.pos-orange:active {
+    background-color: #C48352;
+}
+
+.pos-orange {
+    background-color: #EF9149;
+}
+
+
+
+.keyboard-orange-key {
+}

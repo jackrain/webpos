@@ -1,0 +1,301 @@
+﻿body {
+    font-family: 黑体;
+}
+
+.top {
+    background: url(../images/top.jpg);
+    background-size: 100% 100%;
+    height: 110px;
+}
+
+.logo {
+    background-image: url(../images/logo2.png);
+    height: 40px;
+    width: 110px;
+    display: inline-block;
+}
+
+.tip-mail {
+    background-image: url(../images/tip-mail.png);
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.header-label {
+    display: inline-block;
+    height: 40px;
+    vertical-align: sub;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-sub-right {
+    float: right;
+    margin-top: 8px;
+}
+
+.footer {
+    height: 160px;
+    padding-left: 9px;
+    border-top: 2px solid #ef9149;
+    padding-top: 12px;
+}
+
+.pos-block {
+    display: block;
+}
+
+.pos-inline-block {
+    display: inline-block;
+}
+
+.input-wrapper {
+    width: 290px;
+    height: 40px;
+    padding: 0px 0px 0px 15px;
+    background: url(../images/input.png) no-repeat;
+}
+
+.pos-input::-webkit-input-placeholder {
+    color: #fff2e8;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+.pos-input::-moz-placeholder {
+    font-size: 18px;
+    color: #fff2e8;
+}
+
+.pos-input {
+    border: none;
+    height: 40px;
+    width: 230px;
+    font-size: 18px;
+    color: #fff2e8;
+    outline: none;
+    background-color: transparent;
+}
+
+/*.icon-pos-keyboard:hover {
+    background: url(../images/openkeyboard-hover.png) no-repeat center center;
+}*/
+
+.icon-pos-keyboard {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    background: url(../images/openkeyboard.png) no-repeat center center;
+}
+
+.icon-network-normal {
+    width: 40px;
+    height: 40px;
+    background: url(../images/network-normal.png) no-repeat center center;
+}
+
+.icon-change-work {
+    background: url(../images/workchange.png) no-repeat center center;
+    height: 40px;
+    width: 90px;
+    cursor: pointer;
+}
+
+.icon-view {
+    background: url(../images/view.png) no-repeat center center;
+    height: 46px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.icon-redeem {
+    background: url(../images/redeem.png) no-repeat center center;
+    height: 46px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.icon-recharge {
+    background: url(../images/recharge.png) no-repeat center center;
+    height: 46px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.icon-add-member {
+    background: url(../images/add-member.png) no-repeat center center;
+    height: 85px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.icon-invoice {
+    background: url(../images/invoice.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-product {
+    background: url(../images/product.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-inventory {
+    background: url(../images/inventory.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-refund {
+    background: url(../images/refund.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-compass {
+    background: url(../images/compass.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-help {
+    background: url(../images/help.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-settings {
+    background: url(../images/settings.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.icon-more {
+    background: url(../images/more.png) no-repeat center center;
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.search {
+    margin-top: 5px;
+}
+
+.search-first {
+    margin-left: 10px;
+}
+
+.search-second {
+    margin-left: 15px;
+}
+
+.memeber-search {
+    position: relative;
+    margin-top: 6px;
+    width: 290px;
+    background: url(../images/member-search.png) no-repeat;
+}
+
+.member-label {
+    color: #ffda8f;
+    font-size: 14px;
+    text-align: center;
+}
+
+.member-label-first {
+    margin: 5px 0px 0px 0px;
+}
+
+.member-text {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    margin: 2px 0px 0px 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.member-item {
+    display: inline-block;
+}
+
+.member-search-last {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.pos-menus-row1 {
+}
+
+.pos-menus-row2 {
+    margin-top: 10px;
+}
+
+.member-bottom i {
+    margin: -6px 0px 0px 4px;
+}
+
+.member-bottom {
+    display: inline-block;
+    height: 46px;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+}
+
+.pos-menus icon {
+}
+
+.cashier {
+    width: 310px;
+    height: 100px;
+    background: url(../images/cashier.png) no-repeat;
+}
+
+.cashier-summary {
+    text-align: right;
+    font-size: 18px;
+    color: #815538;
+}
+
+.cashier-title {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 5px 0px 0px 20px;
+}
+
+.cashier-account {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: right;
+}
+
+.cashier-account-label {
+    font-size: 50px;
+    color: #ffffff;
+    text-align: right;
+    padding: 0px 10px 0px 0px;
+}
+
+.pos-body {
+    min-height: 400px;
+    width: 100%;
+}
