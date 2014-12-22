@@ -194,16 +194,16 @@
     line-height: 58px;
 }
 
-.pos-gray:active {
-    background-color: #7E7776;
+.pos-gray-active, .pos-gray:active {
+    background-color: #7E7776 !important;
 }
 
 .pos-gray {
     background-color: #A9A3A0;
 }
 
-.pos-white:active {
-    background-color: #E3E3E3;
+.pos-white-active, .pos-white:active {
+    background-color: #E3E3E3 !important;
 }
 
 .pos-white {
@@ -211,8 +211,8 @@
     background-color: #FFFFFF;
 }
 
-.pos-orange:active {
-    background-color: #C48352;
+.pos-orange-active, .pos-orange:active {
+    background-color: #C48352 !important;
 }
 
 .pos-orange {
