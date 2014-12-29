@@ -5,7 +5,7 @@
 *********************************************************/
 (function ($) {
     'use strict';
-
+    
     //功能
     function Keyboard(element, options) {
         this.init(element, options);
@@ -26,14 +26,15 @@
     Keyboard.VERSION = "1.0.0";
     //默认配置
     Keyboard.DEFAULTS = {
-        keyboard: 'all', // 键盘类型：默认为基本键盘 值： all/digit/customer,
-        mykeyboard: null,
-        shown: null,
-        closen: null,
-        hover: null,
-        top: null,
-        left: null,
-        parent: null
+        keyboard: 'all', // 键盘类型：默认为基本键盘 值： all/digit/custom,
+        mykeyboard: null,//当keyboard为 custom 时 对应的键盘元素选择器
+        shown: null,//当键盘open完毕后会调用的函数
+        closen: null,//当键盘close完毕后会调用的函数
+        hover: null,//键盘是否悬浮
+        top: null,//当hover为true时 指定键盘的上边距
+        left: null,//当hover为true时 指定键盘的左边距
+        parent: null,//当前键盘父级元素位置
+        esc: false//当esc为true时 在按下esc键时关闭键盘
     }
     //当前活跃的输入框
     Keyboard.INPUT = null;
@@ -42,7 +43,7 @@
         ctrl: { "192": "~", "49": "!", "50": "@", "51": "#", "52": "$", "53": "%", "54": "^", "55": "&", "56": "*", "57": "(", "48": ")", "189": "_", "187": "+", "219": "{", "221": "}", "220": "|", "186": ":", "222": "\"", "190": ">", "191": "?", "188": "<" },
         specs: { "219": "[", "221": "]", "220": "\\\\", "186": ";", "222": "'", "188": ",", "190": ".", "191": "/", "189": "-", "187": "=", "9": "tab", "20": "caps", "13": "enter", "8": "bksp" }
     };
-
+    
     //支持
     Keyboard.support = function () {
         var old = $.fn.keyboard
@@ -185,7 +186,8 @@
         var hover = target.attr("data-hover") == "true";
         var shown = target.attr("data-shown");
         var closen = target.attr("data-closen");
-        Plugin.call(target, { keyboard: keyboard, closen: closen, shown: shown, mykeyboard: mykeyboard, hover: hover, top: top, left: left, parent: parent });
+        var esc = target.attr("data-esc") == "true";
+        Plugin.call(target, { keyboard: keyboard, esc: esc, closen: closen, shown: shown, mykeyboard: mykeyboard, hover: hover, top: top, left: left, parent: parent });
     }
     //初始化
     Keyboard.regist = function () {
@@ -238,6 +240,7 @@
         $(document).mouseup(this.bind(this.onKeyboardKeyup));
         $(document).keydown(this.bind(this.onFormKeydown));
         $(document).keyup(this.bind(this.onFormKeyup));
+        this.elementKeyboard.on('click', '.keyboard-close', this.bind(this.close));
     }
     //是目标表单元素聚焦
     Keyboard.prototype.focus = function () {
@@ -335,21 +338,19 @@
             var v = this.getKeyItemCode(target);
             if (v) {
                 this.syncAction(inp, v);
-                Keyboard.timerRun('sync', this.syncAction, this, 800, [inp, v], 50);
+                Keyboard.timerRun('sync', this.syncAction, this, 500, [inp, v], 50);
             }
         }
     }
     //当输入框输入按下键时
     Keyboard.prototype.onFormKeydown = function (e) {
         if (e.keyCode == 16) { return; }
+        this.dispatchGlobalKeyAction(e);
         if (this.elementKeyboard) {
             var char = Keyboard.getKeyStringFromCharCode(e.keyCode, e.shiftKey).toLowerCase();
             if (char == '') { return; }
             var k = this.elementKeyboard.find(".key[data-match='" + char + "']");
             k.addClass(k.attr("data-down"));
-        }
-        if (e.keyCode == 20) {
-            this.capslk(this.elementKeyboard.find('.key[data-event="capslk"]'));
         }
     }
     //当输入框输入键释放按键
@@ -366,6 +367,19 @@
     Keyboard.prototype.onKeyboardKeyup = function (e) {
         Keyboard.timerStop('sync');
         Keyboard.timerStop('bksp');
+    }
+    //全局按键事件
+    Keyboard.prototype.dispatchGlobalKeyAction = function (e) {
+        switch (e.keyCode) {
+            case 20:
+                this.capslk(this.elementKeyboard.find('.key[data-event="capslk"]'));
+                break;
+            case 27:
+                this.options.esc && this.close();
+                break;
+            default:
+                break;
+        }
     }
     //设置指定表单指定值
     Keyboard.prototype.syncAction = function (inp, char) {
@@ -399,7 +413,7 @@
                 cfg = 'data-match="caps" data-down="pos-orange-active" class="key bd-family mlg pos-orange" data-event="capslk"';
                 break;
             case '收起键盘':
-                cfg = 'data-down="pos-orange-active" class="key bd-family blg pos-orange" data-event="close"';
+                cfg = 'data-down="pos-orange-active" class="key bd-family blg pos-orange keyboard-close"';
                 break;
             default:
                 var isAlphabet = /[a-zA-Z]/.test(key);
@@ -423,6 +437,7 @@
     Keyboard.prototype.toggle = function () {
         var c = this.elementKeyboard;
         if (c) {
+            this.focus();
             c.toggle();
         }
         this.focus();
@@ -472,13 +487,29 @@
     }
     //执行tab键功能
     Keyboard.prototype.tab = function (target, e, input) {
-        //this.trigger(input[0], 'KeyboardEvent', ['keydown', true, true, null, 0, 0, 0, 0, 9, String.fromCharCode(9)]);
         var ev = document.createEvent('KeyboardEvent');
-        input.keydown(function (ev) {
+        if (ev.initKeyboardEvent) {
+            if (document.implementation.hasFeature("KeyboardEvents", "3.0")) {
+                ev.initKeyboardEvent('keydown', true, false, document.defaultView, 'U+0009', 0, false, false, false, false, false);
+            }
+        } else if (ev.initKeyEvent) {
+            ev.initKeyEvent("keydown", true, true, null, 0, 0, 0, 0, 9, String.fromCharCode(9));
+        }
+        $(document).keydown(function (es) {
             debugger;
         });
-        ev.initKeyboardEvent('keydown', true, true, document.defaultView, 'A', 0, '', 0);
-        input[0].dispatchEvent(ev);
+        Keyboard.INPUT = null;
+        document.dispatchEvent(ev);
+        Keyboard.INPUT = $(document.activeElement);
+    }
+    //
+    Keyboard.prototype.enter = function (target, e, input) {
+        var ev = document.createEvent("KeyboardEvent");
+        if (ev.initKeyboardEvent) {
+            ev.initKeyboardEvent('keydown', true, false, document.defaultView, 'U+000C', 0, false, false, false, false);
+        } else if (ev.initKeyEvent) {
+            ev.initKeyEvent('keydown', true, treu, null, 0, 0, 0, 13, String.fromCharCode(13));
+        }
     }
     //事件模拟
     Keyboard.prototype.trigger = function (element, eventType, args) {
